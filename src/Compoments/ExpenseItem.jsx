@@ -1,10 +1,11 @@
 import React from "react";
 import "./ExpenseItem.css";
+import Expensedate from "./Expensedate";
 
 function ExpenseItem({ date, des, price }) {
   return (
     <div className="expense-item">
-      <div>{date.toLocaleDateString()}</div>
+      <Expensedate date={date} />
       <div className="expense-item__description">
         <h2>{des}</h2>
       </div>
