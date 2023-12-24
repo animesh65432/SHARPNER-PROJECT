@@ -1,14 +1,17 @@
 import React from "react";
 import "./ExpenseItem.css";
 
-function ExpenseItem({ name, amount }) {
+function ExpenseItem({ date, des, price }) {
   return (
-    <>
-      <div className="expense-item">
-        <p className="expense-item__description">EXPENSEITEM-NAME = {name} </p>
-        <p className="expense-item__description">AMOUNT-PRICES = {amount}</p>
+    <div className="expense-item">
+      <div>{date.toLocaleDateString()}</div>
+      <div className="expense-item__description">
+        <h2>{des}</h2>
       </div>
-    </>
+      <div className="expense-item__price">
+        {Number(price).toLocaleString()}
+      </div>
+    </div>
   );
 }
 
