@@ -2,7 +2,7 @@ import React from "react";
 import "./ExpenseItem.css";
 import Expensedate from "./Expensedate";
 
-function ExpenseItem({ date, des, price }) {
+const ExpenseItem = ({ date, des, price }) => {
   return (
     <div className="expense-item">
       <Expensedate date={date} />
@@ -14,6 +14,6 @@ function ExpenseItem({ date, des, price }) {
       </div>
     </div>
   );
-}
+};
 
 export default ExpenseItem;
