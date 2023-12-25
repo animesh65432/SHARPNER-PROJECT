@@ -33,7 +33,12 @@ const Expense = () => {
       </Card> */}
       <Card>
         {expense_array.map((obj) => (
-          <ExpenseItem date={obj.date} des={obj.des} price={obj.price} />
+          <ExpenseItem
+            key={obj.des}
+            date={obj.date}
+            des={obj.des}
+            price={obj.price}
+          />
         ))}
       </Card>
       {/* <ExpenseItem date={date} des={des} price={price} /> */}

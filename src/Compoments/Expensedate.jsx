@@ -1,4 +1,5 @@
 import React from "react";
+import "./Expensedate.css";
 
 let Expensedate = ({ date }) => {
   const day = date.getDate();
