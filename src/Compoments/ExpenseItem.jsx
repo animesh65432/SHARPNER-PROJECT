@@ -8,16 +8,28 @@ const ExpenseItem = ({ date, des, price }) => {
     item.remove();
   };
 
+  const [title, change_the_title] = useState(des);
+
+  const update_the_work = () => {
+    change_the_title("update");
+  };
+
+  const [money, setmoney] = useState(price);
+
+  const change_the_expense = () => {
+    setmoney("100$");
+  };
+
   return (
     <div className="expense-item">
       <Expensedate date={date} />
       <div className="expense-item__description">
-        <h2>{des}</h2>
+        <h2>{title}</h2>
       </div>
-      <div className="expense-item__price">
-        {Number(price).toLocaleString()}
-      </div>
+      <div className="expense-item__price">{money}</div>
+      <button onClick={update_the_work}>change_the_work</button>
       <button onClick={delete_the_items}>del the items</button>
+      <button onClick={change_the_expense}>chnage_expense</button>
     </div>
   );
 };
