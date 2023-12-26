@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import "./NewExpensefrom.css";
 
 const NewExpensefrom = () => {
-  // State for managing form data
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
 
-  // Event handlers for input changes
   const titleChangeHandler = (e) => {
     setTitle(e.target.value);
   };
@@ -20,21 +18,8 @@ const NewExpensefrom = () => {
     setDate(e.target.value);
   };
 
-  // Event handler for form submission
-  const submitHandler = (e) => {
-    e.preventDefault(); // Prevents the default form submission behavior
-
-    // Do something with the form data (e.g., send it to a parent component or API)
-    console.log({ title, amount, date });
-
-    // You can also reset the form values if needed
-    setTitle("");
-    setAmount("");
-    setDate("");
-  };
-
   return (
-    <form className="new-expense__controls" onSubmit={submitHandler}>
+    <form className="new-expense__controls">
       <div className="new-expense__control">
         <label>TITLE</label>
         <input type="text" value={title} onChange={titleChangeHandler} />
