@@ -25,7 +25,7 @@ const NewExpensefrom = (props) => {
   const dateChangeHandler = (event) => {
     setinputuser({
       ...inputuser,
-      date: event.target.value,
+      date: new Date(event.target.value),
     });
   };
 

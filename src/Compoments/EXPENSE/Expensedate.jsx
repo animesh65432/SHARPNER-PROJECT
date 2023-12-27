@@ -4,7 +4,7 @@ import "./Expensedate.css";
 let Expensedate = ({ date }) => {
   const day = date.toLocaleString("en-us", { day: "2-digit" });
   const month = date.toLocaleString("en-us", { month: "long" });
-  const year = date.toLocaleString("en-us", { year: "numeric" });
+  const year = date.getFullYear();
 
   return (
     <div className="expense-date">
