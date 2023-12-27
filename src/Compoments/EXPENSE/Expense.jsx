@@ -1,9 +1,11 @@
 import Card from "../../UI/Card";
 import ExpenseItem from "./ExpenseItem";
 import "./Expenses.css";
+import NewExpense from "./NewExpense/NewExpense";
+import { useState } from "react";
 
 const Expense = () => {
-  const expense_array = [
+  const [expense_array, set_the_array] = useState([
     {
       date: new Date(2023, 2, 12),
       des: "purchaseing the new car",
@@ -19,7 +21,12 @@ const Expense = () => {
       des: "going to kolkata",
       price: "1239590",
     },
-  ];
+  ]);
+
+  const user_data = (obj) => {
+    set_the_array((prev_array) => [...prev_array, obj]);
+  };
+
   return (
     <>
       {/* <Card>
@@ -31,6 +38,7 @@ const Expense = () => {
           <br />
         </div>
       </Card> */}
+      <NewExpense all_data_from_user={user_data} />
       <Card>
         {expense_array.map((obj) => (
           <ExpenseItem

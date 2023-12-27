@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./NewExpensefrom.css";
 
-const NewExpensefrom = () => {
+const NewExpensefrom = (props) => {
   const [inputuser, setinputuser] = useState({
     title: "",
     amount: "",
@@ -29,8 +29,19 @@ const NewExpensefrom = () => {
     });
   };
 
+  const submit_the_from = (event) => {
+    event.preventDefault();
+    props.ondatafrom(inputuser);
+
+    setinputuser({
+      title: "",
+      amount: "",
+      date: "",
+    });
+  };
+
   return (
-    <form className="new-expense__controls">
+    <form className="new-expense__controls" onSubmit={submit_the_from}>
       <div className="new-expense__control">
         <label>TITLE</label>
         <input
